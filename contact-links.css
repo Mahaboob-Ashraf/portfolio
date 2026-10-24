@@ -1,0 +1,44 @@
+/* The hero dock, opened out into a personal contact hub. */
+.contact-section{scroll-margin-top:0}
+.contact-section .contact-inner{padding:88px 32px 84px}
+.contact-section .contact-content{width:100%;max-width:900px}
+.contact-kicker{margin:0 0 20px;color:#64665c;font-size:11px;font-weight:500;line-height:1.5;letter-spacing:1.8px}
+.contact-section .contact-support{max-width:670px;margin:22px 0 0;font-size:21px;line-height:1.5;letter-spacing:-.3px}
+.contact-dock{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:min(100%,720px);margin-top:38px;padding:16px;border:1px solid #d2d3c6;border-radius:25px;background:linear-gradient(155deg,rgba(255,255,255,.8),rgba(241,242,229,.75));box-shadow:inset 0 1px rgba(255,255,255,.95),0 16px 36px -28px rgba(35,45,25,.24);backdrop-filter:blur(12px)}
+.contact-network{--contact-growth:0;position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-width:0;min-height:142px;padding:20px 10px 16px;border:1px solid rgba(255,255,255,.2);border-radius:17px;background:linear-gradient(145deg,#28282b,#09090a);color:#fff;box-shadow:inset 0 1px rgba(255,255,255,.2),inset 0 -1px rgba(0,0,0,.25),0 4px 7px rgba(0,0,0,.13);transform:translateY(calc(var(--contact-growth)*-10px)) scale(calc(1 + var(--contact-growth)*.045));transform-origin:center bottom;outline-offset:5px;-webkit-tap-highlight-color:transparent}
+.contact-network::before{content:'';position:absolute;z-index:-1;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent 45%,transparent 65%,rgba(255,255,255,.025));pointer-events:none}
+.contact-network::after{content:'↗';position:absolute;top:11px;right:13px;font-size:15px;line-height:1;opacity:.65;transition:translate .3s,opacity .3s}
+.contact-network:is(:hover,:focus-visible)::after{translate:2px -2px;opacity:1}
+.contact-network:active{transform:translateY(1px) scale(.98)}
+.contact-network-linkedin{background:linear-gradient(145deg,#0b70c9,#0755a2)}
+.contact-network-x{background:linear-gradient(145deg,#232326,#030304)}
+.contact-network-email{background:linear-gradient(135deg,#ff668f,#ffb06b);color:#291b1a;border-color:rgba(205,72,52,.25)}
+.contact-network-symbol{display:grid;place-items:center;width:42px;height:42px;margin-bottom:3px;transform:translateY(calc(var(--contact-growth)*-2px))}
+.contact-network-symbol img{display:block;width:100%;height:100%;object-fit:contain;border-radius:7px}
+.contact-brand-mask{display:block;width:36px;height:36px;background:currentColor;mask:var(--contact-logo) center/contain no-repeat;-webkit-mask:var(--contact-logo) center/contain no-repeat}
+.contact-network-symbol svg{display:block;width:36px;height:36px}
+.contact-network strong{font-size:17px;font-weight:500;line-height:1.25;letter-spacing:-.35px}
+.contact-network small{color:#c7c7cc;font-size:11px;line-height:1.5}
+.contact-network-linkedin small{color:#e1efff}
+.contact-network-email small{color:#4b272e}
+.contact-email-block{width:min(100%,580px);margin-top:28px}
+.contact-email-label{margin:0 0 10px;color:#64665c;font-size:10px;line-height:1.5;letter-spacing:1.5px}
+.contact-email-copy{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;min-height:64px;padding:16px 20px;border:1px solid #cbd0be;border-radius:15px;background:rgba(255,255,255,.65);color:#34382e;box-shadow:inset 0 1px rgba(255,255,255,.9),0 3px 8px rgba(40,45,25,.025);text-align:left;cursor:pointer;transition:border-color .25s,background-color .25s,box-shadow .3s}
+.contact-email-copy:is(:hover,:focus-visible){border-color:#b78965;background:#fff9ed;box-shadow:0 6px 22px -14px rgba(166,79,36,.28)}
+.contact-email-address{min-width:0;overflow-wrap:anywhere;font-size:17px;line-height:1.5;letter-spacing:-.3px}
+.contact-copy-action{display:flex;flex:none;align-items:center;gap:7px;color:#666b5d;font-size:12px;line-height:1.5}
+.contact-copy-icon{position:relative;display:block;width:19px;height:19px}
+.contact-copy-icon svg{position:absolute;inset:0;width:19px;height:19px;transition:opacity .2s,transform .25s}
+.contact-copy-check{opacity:0;transform:scale(.7)}
+.is-copied .contact-copy-original{opacity:0;transform:scale(.7)}
+.is-copied .contact-copy-check{opacity:1;transform:scale(1)}
+.contact-email-copy.is-copied{border-color:#94b5a2;background:#f3faf0}
+.contact-email-copy.is-copied .contact-copy-action{color:#2a6148}
+.contact-email-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px 16px;min-height:32px;margin-top:8px;color:#64665c;font-size:12px;line-height:1.5}
+.contact-email-feedback{min-height:18px;text-align:left}
+.contact-email-app{display:inline-flex;align-items:center;gap:6px;min-height:32px;color:var(--accent-ink);text-underline-offset:4px}
+.contact-email-app:is(:hover,:focus-visible){text-decoration:underline}
+@media(max-width:760px){.contact-section .contact-inner{padding:72px 22px}.contact-dock{gap:10px;padding:12px}.contact-network{min-height:134px;padding-inline:7px}.contact-network strong{font-size:16px}.contact-network small{font-size:10px}.contact-section .contact-support{max-width:540px;font-size:19px}}
+@media(max-width:560px){.contact-dock{grid-template-columns:repeat(2,minmax(0,1fr));width:min(100%,370px);gap:12px;margin-top:30px;padding:14px}.contact-network{min-height:134px}.contact-network small{font-size:11px}.contact-email-block{margin-top:24px}.contact-email-copy{gap:12px;padding:14px}.contact-email-address{font-size:14px}.contact-email-footer{justify-content:center}.contact-email-feedback{width:100%;text-align:center}.contact-section .contact-support{max-width:350px;font-size:18px}.contact-kicker{margin-bottom:16px}}
+@media(max-width:360px){.contact-section .contact-inner{padding-inline:18px}.contact-dock{padding:10px;gap:10px}.contact-network{min-height:128px}.contact-network strong{font-size:16px}.contact-network small{font-size:10px}.contact-email-address{font-size:13px}.contact-copy-action [data-copy-label]{display:none}}
+@media(prefers-reduced-motion:reduce){.contact-network,.contact-network-symbol,.contact-network:active{transform:none}.contact-network::after,.contact-email-copy,.contact-copy-icon svg{transition:none}}

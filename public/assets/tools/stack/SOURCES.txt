@@ -1,0 +1,25 @@
+Stack logos are stored locally; no runtime icon service is required.
+
+SVG Logos (CC0) and Simple Icons (CC0), distributed through Iconify:
+https://icon-sets.iconify.design/logos/
+https://icon-sets.iconify.design/simple-icons/
+https://github.com/gilbarbara/logos
+https://github.com/simple-icons/simple-icons
+
+RAG's document-search symbol: Lucide (ISC), distributed through Iconify.
+https://lucide.dev/license
+See LUCIDE-LICENSE.txt.
+
+Git Worktrees uses Git's logo. Claude Code uses Claude's logo.
+Vector DB uses the Supabase logo, as in the visual reference.
+Some monochrome logo fills have been adjusted for the dark background.
+Brand names and logos remain the property of their respective owners.
+
+Java, JavaScript, Vite, PyTorch, and Ollama logos were retrieved through Iconify
+from the same SVG Logos and Simple Icons collections listed above.
+Fastify and Spring Boot use Simple Icons artwork from the collection above.
+Semantic engineering icons are derived from lucide-react 0.562.0 (ISC),
+with a muted green stroke. See LUCIDE-LICENSE.txt.
+
+The active stack list is curated in workflow.js and includes skills from Ashraf's
+AI, FDE, and SDE resumes.

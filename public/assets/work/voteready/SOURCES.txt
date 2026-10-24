@@ -1,0 +1,13 @@
+VoteReady project screenshots
+Source: https://github.com/Mahaboob-Ashraf/VoteReady/blob/main/README.md
+Downloaded 24 October 2026 from the repository's docs/screenshots directory:
+
+01-landing.png
+03-household-dashboard.png
+04-telugu-matcher.png
+06-hearing-preparation.png
+07-architecture.png
+
+These depict the author's synthetic demonstration, not real voter records.
+
+The .webp equivalents are lossless delivery versions of these original PNG files.

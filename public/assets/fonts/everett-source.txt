@@ -1,0 +1,8 @@
+Typeface: TWK Everett, Nolan Paparelli / WELTKERN.
+Regular (400), Medium (500), Bold (700), Latin WOFF2.
+Added for the requested Design Next typography treatment.
+Source page: https://designnext.studio/
+Source webfont resources:
+https://designnext.studio/_next/static/media/TWKEverett_Regular_latin-s.p.3mysokousrdhd.woff2
+https://designnext.studio/_next/static/media/TWKEverett_Medium_latin-s.p.3v9x0687pk6sb.woff2
+https://designnext.studio/_next/static/media/TWKEverett_Bold_latin-s.p.353ezlre6ps_5.woff2

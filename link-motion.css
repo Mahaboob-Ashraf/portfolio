@@ -1,0 +1,16 @@
+/* An underline leads into a bottom-to-top fill, matching the supplied reference. */
+.site-footer .ink-link,.project-page .project-article .ink-link,.contribution-page .contribution-frame .ink-link,.oss-card .ink-link{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:8px;width:fit-content;max-width:100%;padding:2px 6px;margin-inline:-6px;border-radius:0;line-height:1.5;text-decoration:none;transform:none;transition:color .16s .08s;background:linear-gradient(var(--accent-ink),var(--accent-ink)) left bottom/0 1px no-repeat}
+.ink-link-label{min-width:0;overflow-wrap:anywhere}
+.ink-link::before{content:'';position:absolute;z-index:-1;inset:0;background:var(--accent-ink);clip-path:inset(100% 0 0);transition:clip-path .2s cubic-bezier(.22,1,.36,1)}
+.ink-link::after{content:'→';display:inline-block;flex:none;width:14px;font-size:14px;line-height:1;opacity:0;transform:translateX(-6px);transition:opacity .18s,transform .28s cubic-bezier(.22,1,.36,1)}
+.site-footer .ink-link:is(:hover,:focus-visible),.project-page .project-article .ink-link:is(:hover,:focus-visible),.contribution-page .contribution-frame .ink-link:is(:hover,:focus-visible),.oss-card .ink-link:is(:hover,:focus-visible),.project-next:is(:hover,:focus-visible) .ink-link{color:#fff;background-size:100% 1px;transition:background-size .1s,color .16s .08s;transform:none}
+.ink-link:is(:hover,:focus-visible)::before{clip-path:inset(0);transition-delay:.07s}
+.ink-link:is(:hover,:focus-visible)::after{opacity:1;transform:none;transition-delay:.1s}
+.project-next:is(:hover,:focus-visible) .ink-link::before{clip-path:inset(0);transition-delay:.07s}
+.project-next:is(:hover,:focus-visible) .ink-link::after{opacity:1;transform:none;transition-delay:.1s}
+.site-footer .ink-icon-button{position:relative;isolation:isolate;border-radius:0;transition:color .16s .06s}
+.ink-icon-button::before{content:'';position:absolute;z-index:-1;inset:0;background:var(--accent-ink);clip-path:inset(100% 0 0);transition:clip-path .2s cubic-bezier(.22,1,.36,1)}
+.site-footer .ink-icon-button:is(:hover,:focus-visible){color:#fff;background:transparent}
+.ink-icon-button:is(:hover,:focus-visible)::before{clip-path:inset(0)}
+@media(max-width:620px){.site-footer .footer-email .ink-link::after{display:none}.site-footer .ink-link{min-height:30px}}
+@media(prefers-reduced-motion:reduce){.ink-link,.ink-link::before,.ink-link::after,.ink-icon-button,.ink-icon-button::before{transition:none!important}}

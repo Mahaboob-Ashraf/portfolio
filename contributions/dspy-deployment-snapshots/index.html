@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fdfef0" />
+  <meta name="description" content="Remove superseded prerelease documentation when its exact stable release is published, without disturbing other versions or retry safety." />
+  <title>Cleaning up deployment snapshots — DSPy · Mahaboob Ashraf</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png" />
+  <link rel="preload" href="/assets/fonts/everett-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/everett-bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/oss.css" />
+  <link rel="stylesheet" href="/contact-footer.css" />
+  <link rel="stylesheet" href="/white-orange.css" />
+  <link rel="stylesheet" href="/link-motion.css" />
+  <link rel="stylesheet" href="/contact-links.css" />
+    <link rel="stylesheet" href="/contact-dark.css" />
+  <script src="/link-motion.js" defer></script>
+  <link rel="stylesheet" href="/contribution-page.css" />
+  <script src="/project-page.js" defer></script>
+  <script src="/faq-motion.js" defer></script>
+  <script src="/contribution-motion.js" defer></script>
+  <script src="/contact-ghost-fibers.js" defer></script>
+  <script src="/contact-footer.js" defer></script><script src="/contact-links.js" defer></script>
+</head>
+<body class="contribution-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="header-blur" aria-hidden="true"></div>
+  <div class="site-frame">
+    <header class="site-header">
+        <div class="navigation-wrap">
+          <p class="nav-greeting" aria-hidden="true"><span class="nav-greeting-icon"></span><span class="nav-greeting-text"></span></p>
+          <nav class="nav-pill" aria-label="Primary navigation" id="primary-navigation">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/work">Work</a>
+            <a class="nav-link nav-oss is-active" href="/#oss" aria-current="page">Open Source</a>
+            <a class="nav-link nav-experience" href="/#experience">Experience</a>
+            <a class="nav-link" href="/#about">About</a>
+            <a class="nav-link nav-resume" href="/assets/resume/Mohammad_Mahaboob_Ashraf_Resume.pdf" download="Mohammad_Mahaboob_Ashraf_Resume.pdf" aria-label="Download resume (PDF)">Resume<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg></a>
+            <a class="nav-link nav-contact" href="#contact">Contact</a>
+          </nav>
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span><span></span>
+          </button>
+        </div>
+        <span class="availability"><span class="availability-dot" aria-hidden="true"></span>Open to internships &amp; contracts</span>
+      </header>
+    <main id="main">
+      <div class="contribution-frame">
+        <article aria-labelledby="contribution-title">
+          <header class="contribution-header">
+            <img class="contribution-header-art" src="/assets/contributions/dspy-header.webp" width="1536" height="1024" alt="" aria-hidden="true" fetchpriority="high" />
+            <div class="contribution-kicker"><span>DSPy</span><span class="oss-status-group"><span class="oss-status oss-status-open"><span aria-hidden="true"></span>Open PR</span></span></div>
+            <h1 id="contribution-title">Cleaning up deployment snapshots</h1>
+            <p class="contribution-summary">Remove superseded prerelease documentation when its exact stable release is published, without disturbing other versions or retry safety.</p>
+            <div class="contribution-meta"><a class="contribution-author" href="/#about"><img src="/assets/mahaboob-ashraf-avatar.jpg" width="30" height="30" alt=""/><span><strong>Mahaboob Ashraf</strong>Open source contribution · 3 min read</span></a><div class="contribution-meta-info"><span>PR opened <time datetime="2026-10-03">3 October 2026</time></span><a href="https://github.com/stanfordnlp/dspy/pull/10563" target="_blank" rel="noopener noreferrer">stanfordnlp/dspy · #10563 ↗</a></div></div>
+          </header>
+          <div class="contribution-body">
+            <p>Versioned documentation snapshots were append-only. A beta such as <code>3.4.0b1</code> could stay deployed and visible after stable <code>3.4.0</code> was published.</p><p>This contribution proposes cleaning up only the alpha, beta, and release-candidate snapshots for that exact stable release. The difficult part is preserving publication guarantees while removing stale routes and inventory entries.</p>
+            <figure class="contribution-artwork"><img src="/assets/dspy.webp" width="1536" height="1024" alt="DSPy illustration of superseded documentation snapshots being cleaned up" loading="lazy" decoding="async"/><figcaption>DSPy · contribution overview</figcaption></figure>
+            <section aria-labelledby="article-section-1"><h2 id="article-section-1">Match the exact release, not a broad prefix</h2><p>Publishing <code>3.4.0</code> can remove <code>3.4.0a1</code>, <code>3.4.0b12</code>, and <code>3.4.0rc2</code>. It must preserve other patch or minor releases, unrelated prereleases, and stable snapshots.</p><figure class="contribution-diagram"><div class="contribution-release-grid"><div class="contribution-diagram-lane"><strong>Before stable publication</strong><span class="contribution-version is-removed">3.4.0a1 <small>superseded</small></span><span class="contribution-version is-removed">3.4.0b12 <small>superseded</small></span><span class="contribution-version is-removed">3.4.0rc2 <small>superseded</small></span><span class="contribution-version">3.4.1b1 <small>preserve</small></span></div><div class="contribution-diagram-lane"><strong>Publish 3.4.0</strong><span class="contribution-version">3.4.0 <small>stable</small></span><span class="contribution-version">3.4 → 3.4.0 <small>alias</small></span><span class="contribution-version">3.4.1b1 <small>unchanged</small></span></div></div><figcaption>Illustrative inventory: only prereleases for the exact stable version are pruned.</figcaption></figure><figure class="contribution-code"><figcaption>Exact prerelease matching · Python</figcaption><pre tabindex="0" aria-label="Exact prerelease matching · Python"><code>prerelease = re.compile(re.escape(identifier) + r&quot;(?:a|b|rc)[0-9]+&quot;)
+superseded = [
+    str(entry.version)
+    for entry in versions
+    if prerelease.fullmatch(str(entry.version))
+]</code></pre></figure><p>Escaping the stable identifier and using <code>fullmatch</code> keeps the candidate set tied to one release. Multi-digit prerelease suffixes are included without broad directory or minor-line deletion.</p></section>
+<section aria-labelledby="article-section-2"><h2 id="article-section-2">One deployment update, not a partial state</h2><p>Mike’s ordinary deploy and delete commands each create a commit. Running them separately would expose an intermediate state where the stable release is published but cleanup has not completed.</p><p>The proposed publisher uses Mike’s Git primitives to put stable publication, alias updates, inventory changes, and prerelease removal into one Git commit. Missing or malformed inventory fails before cleanup; prereleases with unexpected alias ownership are not silently removed.</p><p>Stable content remains immutable. An identical existing stable snapshot can clean up retained prereleases without rewriting its content. Different content is rejected. Once publication and cleanup have succeeded, an identical retry is a no-op.</p><aside class="contribution-callout">A delayed older patch must not move the minor alias backward. Existing caller-provided aliases and unrelated releases remain protected.</aside></section>
+<section aria-labelledby="article-section-3"><h2 id="article-section-3">Regression coverage for publication guarantees</h2><p>Tests exercise real Mike publication in temporary Git repositories. They check exact alpha/beta/RC removal, unrelated-version preservation, one-commit publication, immutable stable content, forward-only aliases, and retry behaviour.</p><p>An injected inventory-write failure verifies that the combined update leaves the deployment branch unchanged and allows a later successful retry.</p><div class="contribution-table-wrap" tabindex="0" role="region" aria-label="Reported contribution validation"><table class="contribution-table"><thead><tr><th scope="col">Reported local validation</th><th scope="col">Result</th></tr></thead><tbody><tr><td>Relevant versioned-documentation tests</td><td>24 passed</td></tr><tr><td>Ruff lint and formatting</td><td>Passed</td></tr><tr><td>Applicable pre-commit hooks</td><td>Passed</td></tr><tr><td>git diff --check</td><td>Passed</td></tr></tbody></table></div></section>
+<section aria-labelledby="article-section-4"><h2 id="article-section-4">Implementation available for review</h2><p>PR #10563 contains the publisher change, documentation, and regression tests. It remains open. The implementation preserves the existing publication model while adding exact cleanup; it does not claim that deployment changes have already shipped upstream.</p></section>
+            <div class="contribution-endnote"><a href="https://github.com/stanfordnlp/dspy/pull/10563" target="_blank" rel="noopener noreferrer">View implementation & discussion ↗</a><div class="contribution-share"><button class="project-copy-link" type="button">Copy article link <span aria-hidden="true">↗</span></button><span class="project-copy-status" role="status" aria-live="polite"></span></div><span class="contribution-checked">PR status checked <time datetime="2026-10-23">23 October 2026</time>.</span></div>
+            <a class="contribution-author-end" href="/#about"><img src="/assets/mahaboob-ashraf-avatar.jpg" width="36" height="36" alt=""/><span><strong>Mahaboob Ashraf</strong>Software & AI Engineer · Hyderabad, India</span></a>
+          </div>
+        </article>
+        <section class="contribution-faq" aria-labelledby="contribution-faq-title"><h2 id="contribution-faq-title">Frequently asked questions</h2><details><summary>Which snapshots does a stable publication remove?<span class="contribution-faq-symbol" aria-hidden="true"></span></summary><div class="contribution-faq-answer"><p>Only alpha, beta, and release-candidate versions belonging to that exact stable release, such as 3.4.0a1, 3.4.0b12, and 3.4.0rc2 when publishing 3.4.0.</p></div></details><details><summary>What happens if publication is repeated?<span class="contribution-faq-symbol" aria-hidden="true"></span></summary><div class="contribution-faq-answer"><p>After successful publication and cleanup, an identical retry is a no-op. An identical already-published stable snapshot can also clean up stale prereleases without rewriting its content.</p></div></details><details><summary>Can cleanup overwrite a stable snapshot or move its alias backward?<span class="contribution-faq-symbol" aria-hidden="true"></span></summary><div class="contribution-faq-answer"><p>No. Different content for an existing stable snapshot is rejected, and the forward-only minor-alias behaviour is preserved. The regression suite covers both guarantees.</p></div></details></section>
+        <section class="contribution-related" aria-labelledby="related-title"><h2 id="related-title">More contributions</h2><div class="contribution-related-grid"><article class="oss-card"><a class="oss-cover" href="/contributions/agenta-slack-downloads" aria-label="Explore Bounding Slack media downloads"><img src="/assets/agenta.webp" width="1536" height="1024" alt="Agenta illustration of Slack media passing through a download size boundary" loading="lazy" decoding="async"/></a><div class="oss-card-content"><p class="oss-project">Agenta</p><h3><a href="/contributions/agenta-slack-downloads">Bounding Slack media downloads</a></h3><p class="oss-description">Implemented bounded HTTPX streaming to stop oversized Slack attachments without consuming the remaining response.</p><footer class="oss-card-footer"><div class="oss-status-row"><span class="oss-status-group"><span class="oss-status oss-status-merged"><span aria-hidden="true"></span>Merged</span></span><span class="oss-pr-number">#7701</span></div><div class="oss-card-links"><a class="oss-explore" href="/contributions/agenta-slack-downloads">Explore contribution ↗</a><a href="https://github.com/Agenta-AI/agenta/pull/7701" target="_blank" rel="noopener noreferrer">View PR ↗</a></div></footer></div></article><article class="oss-card"><a class="oss-cover" href="/contributions/logfire-background-tracing" aria-label="Explore Tracing FastAPI background tasks"><img src="/assets/pydantic.webp" width="1536" height="1024" alt="Pydantic Logfire illustration of linked request and background traces" loading="lazy" decoding="async"/></a><div class="oss-card-content"><p class="oss-project">Pydantic · Logfire</p><h3><a href="/contributions/logfire-background-tracing">Tracing FastAPI background tasks</a></h3><p class="oss-description">Implemented separate, linked traces for background task batches. Added regression tests and documentation.</p><footer class="oss-card-footer"><div class="oss-status-row"><span class="oss-status-group"><span class="oss-status oss-status-open"><span aria-hidden="true"></span>Open PR</span> <span class="oss-status oss-status-assigned" title="Issue #1034 is assigned to Mahaboob-Ashraf">Assigned</span></span><span class="oss-pr-number">#2650</span></div><div class="oss-card-links"><a class="oss-explore" href="/contributions/logfire-background-tracing">Explore contribution ↗</a><a href="https://github.com/pydantic/logfire/pull/2650" target="_blank" rel="noopener noreferrer">View PR ↗</a></div></footer></div></article></div></section>
+      </div>
+      <div class="grid-separator" aria-hidden="true"><span class="grid-node grid-node-left"></span><span class="grid-node grid-node-right"></span></div>
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+          <div class="contact-inner">
+            <div class="contact-ghost-fibers" data-ghost-preset="bokeh" aria-hidden="true"><canvas></canvas></div>
+            <span class="contact-cross contact-cross-one" aria-hidden="true">+</span>
+            <span class="contact-cross contact-cross-two" aria-hidden="true">+</span>
+            <div class="contact-content">
+              <p class="contact-kicker contact-reveal">LET’S CONNECT</p>
+              <h2 id="contact-title" class="contact-title contact-reveal"><span>LET’S TALK ABOUT</span><span><strong>WHAT’S NEXT.</strong></span></h2>
+              <p class="contact-support contact-reveal">I’m open to contracts, internships, and remote engineering roles.</p>
+              <nav class="contact-dock contact-reveal" aria-label="Connect with Mahaboob Ashraf">
+                <a class="contact-network contact-network-github" href="https://github.com/Mahaboob-Ashraf" target="_blank" rel="noopener noreferrer" aria-label="GitHub — Code &amp; contributions (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><span class="contact-brand-mask" style="--contact-logo:url('/assets/tools/github.svg')"></span></span><strong>GitHub</strong><small>Code &amp; contributions</small></a>
+                <a class="contact-network contact-network-linkedin" href="https://www.linkedin.com/in/mohammad-mahaboob-ashraf-a0b17b321/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — Let’s connect (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><img src="/assets/tools/linkedin.svg" width="42" height="42" alt=""/></span><strong>LinkedIn</strong><small>Let’s connect</small></a>
+                <a class="contact-network contact-network-x" href="https://x.com/Mahaboob_Ashraf" target="_blank" rel="noopener noreferrer" aria-label="X — Follow along (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><span class="contact-brand-mask" style="--contact-logo:url('/assets/tools/x.svg')"></span></span><strong>X</strong><small>Follow along</small></a>
+                <a class="contact-network contact-network-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mahaboobashraf12%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email me — Open Gmail (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 6.7 5a2 2 0 0 0 2.6 0L20 7"/></svg></span><strong>Email me</strong><small>Open Gmail</small></a>
+              </nav>
+              <div class="contact-email-block contact-reveal">
+                <p class="contact-email-label">STRAIGHT TO MY INBOX</p>
+                <button class="contact-email-copy" type="button" data-copy-email="mahaboobashraf12@gmail.com" aria-label="Copy email address: mahaboobashraf12@gmail.com" aria-describedby="contact-copy-feedback">
+                  <span class="contact-email-address">mahaboobashraf12@gmail.com</span><span class="contact-copy-action"><span class="contact-copy-icon" aria-hidden="true"><svg class="contact-copy-original" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 5V4H4v12h1"/></svg><svg class="contact-copy-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span data-copy-label>Copy</span></span>
+                </button>
+                <div class="contact-email-footer"><span id="contact-copy-feedback" class="contact-email-feedback" role="status" aria-live="polite"></span><a class="contact-email-app" href="mailto:mahaboobashraf12@gmail.com">Use your email app <span aria-hidden="true">↗</span></a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <div class="grid-separator" aria-hidden="true"><span class="grid-node grid-node-left"></span><span class="grid-node grid-node-right"></span></div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-main">
+            <nav class="footer-navigation" aria-label="Footer navigation">
+              <div class="footer-link-group"><h2>EXPLORE</h2><a href="/work">Projects</a><a href="/#oss">Open source</a><a href="/#about">About</a><a href="/#experience">Experience</a><a href="#contact">Contact</a></div>
+              <div class="footer-link-group"><h2>SOCIAL</h2><a href="https://github.com/Mahaboob-Ashraf" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mohammad-mahaboob-ashraf-a0b17b321/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/Mahaboob_Ashraf" target="_blank" rel="noopener noreferrer">X</a></div>
+            </nav>
+            <div class="footer-details">
+              <div><span class="footer-label">LOCAL TIME</span><p><time id="footer-local-time">IST</time> <span>· Hyderabad, India</span></p></div>
+              <div><span class="footer-label">EMAIL</span><div class="footer-email"><a href="mailto:mahaboobashraf12@gmail.com">mahaboobashraf12@gmail.com</a><button class="copy-email" type="button" aria-describedby="footer-copy-status" aria-label="Copy email address" data-email="mahaboobashraf12@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="11" height="11" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v1"/></svg></button></div><span id="footer-copy-status" class="copy-status" role="status" aria-live="polite"></span></div>
+            </div>
+          </div>
+          <div class="footer-bottom"><small>© <span id="footer-year">2026</span> Mahaboob Ashraf</small><span>Software &amp; AI Engineer · Hyderabad, India</span></div>
+          <div class="footer-watermark" aria-hidden="true"><span class="footer-name">Mahaboob Ashraf</span></div>
+        </div>
+      </footer>
+  </div>
+</body>
+</html>

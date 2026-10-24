@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fdfef0" />
+  <meta name="description" content="Turn noisy WhatsApp exports into relevant answers, action items, decisions, and key facts. A retrieval-augmented chat analyser with a Python backend and PostgreSQL vector search." />
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png" />
+  <title>ContextAI — Project case study · Mahaboob Ashraf</title>
+  <link rel="preload" href="/assets/fonts/everett-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/everett-bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/contact-footer.css" />
+  <link rel="stylesheet" href="/white-orange.css" />
+  <link rel="stylesheet" href="/link-motion.css" />
+  <link rel="stylesheet" href="/contact-links.css" />
+    <link rel="stylesheet" href="/contact-dark.css" />
+  <script src="/link-motion.js" defer></script>
+  <link rel="stylesheet" href="/project-page.css" />
+  <script src="/project-page.js" defer></script>
+  <script src="/project-motion.js" defer></script>
+  <script src="/faq-motion.js" defer></script>
+  <script src="/contact-ghost-fibers.js" defer></script>
+  <script src="/contact-footer.js" defer></script><script src="/contact-links.js" defer></script>
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="header-blur" aria-hidden="true"></div>
+  <div class="site-frame">
+    <header class="site-header">
+        <div class="navigation-wrap">
+          <p class="nav-greeting" aria-hidden="true"><span class="nav-greeting-icon"></span><span class="nav-greeting-text"></span></p>
+          <nav class="nav-pill" aria-label="Primary navigation" id="primary-navigation">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link is-active" href="/work" aria-current="page">Work</a>
+            <a class="nav-link nav-oss" href="/#oss">Open Source</a>
+            <a class="nav-link nav-experience" href="/#experience">Experience</a>
+            <a class="nav-link" href="/#about">About</a>
+            <a class="nav-link nav-resume" href="/assets/resume/Mohammad_Mahaboob_Ashraf_Resume.pdf" download="Mohammad_Mahaboob_Ashraf_Resume.pdf" aria-label="Download resume (PDF)">Resume<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg></a>
+            <a class="nav-link nav-contact" href="#contact">Contact</a>
+          </nav>
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span><span></span>
+          </button>
+        </div>
+        <span class="availability"><span class="availability-dot" aria-hidden="true"></span>Open to internships &amp; contracts</span>
+      </header>
+    <main id="main">
+      <article class="project-article" aria-labelledby="project-title">
+        <header class="project-intro">
+          <img class="project-header-art" src="/assets/work/contextai/abstract.svg" width="1600" height="500" alt="" aria-hidden="true" fetchpriority="high" />
+          <nav aria-label="Breadcrumb"><ol class="project-breadcrumbs"><li><a href="/">Home</a></li><li><a href="/work">Projects</a></li><li aria-current="page">ContextAI</li></ol></nav>
+          <h1 id="project-title">ContextAI</h1>
+          <div class="project-intro-bottom"><p class="project-summary">Turn noisy WhatsApp exports into relevant answers, action items, decisions, and key facts. A retrieval-augmented chat analyser with a Python backend and PostgreSQL vector search.</p></div>
+        </header>
+        <section class="project-meta" aria-label="Project details">
+          <dl class="project-facts"><div><dt>Type</dt><dd>Team hackathon project</dd></div><div><dt>Role</dt><dd>Core backend developer · RAG pipeline</dd></div><div><dt>Source</dt><dd><a href="https://github.com/Mahaboob-Ashraf/ContextAI" target="_blank" rel="noopener noreferrer">GitHub ↗</a></dd></div><div><dt>Scope</dt><dd>WhatsApp chat analysis</dd></div></dl>
+          <div class="project-stack"><h2>Tech stack</h2><ul class="project-stack-list"><li><img class="stack-logo" src="/assets/tools/stack/python.svg" alt="" aria-hidden="true" width="13" height="13" />Python</li><li><img class="stack-logo" src="/assets/tools/stack/gemini.svg" alt="" aria-hidden="true" width="13" height="13" />Gemini</li><li><img class="stack-logo" src="/assets/tools/stack/postgres.svg" alt="" aria-hidden="true" width="13" height="13" />PostgreSQL</li><li>pgvector</li><li>Vector embeddings</li><li>Regex parsing</li></ul></div>
+        </section>
+        <section class="project-section" aria-labelledby="section-title-01" id="section-01"><div class="project-section-label"><div class="project-section-heading"><span class="project-section-number">01</span><h2 id="section-title-01">Find the useful signal in a chat export</h2></div></div><div class="project-section-body"><p>Group conversations mix decisions, tasks, repeated messages, and system metadata. Scrolling through a raw WhatsApp export makes it difficult to find an answer or recover the commitments buried in the conversation.</p><p>ContextAI ingests exported <code>.txt</code> files and builds a retrieval-augmented analysis workflow. A natural-language question retrieves relevant conversation context before Gemini produces a structured response.</p><aside class="project-callout">A team hackathon project. My responsibility was the core backend architecture and the entire RAG pipeline.</aside></div></section><figure class="project-media"><img src="/assets/work/contextai/dashboard.webp" alt="ContextAI WhatsApp dashboard showing a selected group conversation, message count, analysis depth, and Analyze Chat button" width="1868" height="925" loading="lazy" decoding="async" /><figcaption>The WhatsApp workspace brings chat selection and analysis controls into one view. Private chat names are redacted.</figcaption></figure>
+<section class="project-section" aria-labelledby="section-title-02" id="section-02"><div class="project-section-label"><div class="project-section-heading"><span class="project-section-number">02</span><h2 id="section-title-02">From raw text to retrieved context</h2></div></div><div class="project-section-body"><p>Custom parsing and regular expressions remove timestamps, system messages, and metadata noise. Cleaned message events are embedded and stored in PostgreSQL with pgvector.</p><div class="project-flow"><div class="project-flow-item" data-tone="source">WhatsApp .txt export</div><span class="project-flow-arrow" aria-hidden="true">↓</span><div class="project-flow-item" data-tone="process">Parse + clean message events</div><span class="project-flow-arrow" aria-hidden="true">↓</span><div class="project-flow-item" data-tone="model">Generate embeddings</div><span class="project-flow-arrow" aria-hidden="true">↓</span><div class="project-flow-item" data-tone="source">PostgreSQL + pgvector</div><span class="project-flow-arrow" aria-hidden="true">↓</span><div class="project-flow-item" data-tone="source">Cosine similarity · top 5 context items</div><span class="project-flow-arrow" aria-hidden="true">↓</span><div class="project-flow-item" data-tone="result">Gemini → structured JSON</div></div><p>For each question, cosine-similarity search retrieves the five most relevant context items. Those retrieved messages form the context for synthesis rather than sending every message as an undifferentiated prompt.</p></div></section>
+<section class="project-section" aria-labelledby="section-title-03" id="section-03"><div class="project-section-label"><div class="project-section-heading"><span class="project-section-number">03</span><h2 id="section-title-03">Structured answers with a clear contract</h2></div></div><div class="project-section-body"><p>The response prompt organises output into three categories: <strong>Action Items</strong>, <strong>Decisions Made</strong>, and <strong>Key Facts</strong>. A typed JSON structure gives the consuming application predictable fields.</p><p>My implementation work covered the vector-storage model, semantic top-five retrieval, preprocessing, and prompt/output structure. The workflow supports natural-language questions and contextual task extraction.</p><aside class="project-callout">A structured response constrains the output format. It does not, on its own, prove that every extracted fact is correct or eliminate hallucinations.</aside></div></section>
+<section class="project-section" aria-labelledby="section-title-04" id="section-04"><div class="project-section-label"><div class="project-section-heading"><span class="project-section-number">04</span><h2 id="section-title-04">Trade-offs</h2></div></div><div class="project-section-body"><div class="project-table-wrap project-tradeoff-wrap" tabindex="0" role="region" aria-label="Engineering trade-offs"><table class="project-table project-table-tradeoffs"><thead><tr><th scope="col"><span class="table-heading">Choice</span></th><th scope="col"><span class="table-heading">Reason</span></th><th scope="col"><span class="table-heading">Open question</span></th></tr></thead><tbody><tr><td>Custom export parsing</td><td>Remove common metadata and system noise before embedding.</td><td>How well does parsing generalise across export formats?</td></tr><tr><td>PostgreSQL + pgvector</td><td>Store vectors and retrieve semantic context in one database.</td><td>How should indexing and query cost evolve with larger exports?</td></tr><tr><td>Top-five semantic retrieval</td><td>Keep synthesis context focused.</td><td>Are all messages needed for a decision actually retrieved?</td></tr><tr><td>Typed JSON categories</td><td>Offer predictable fields for tasks, decisions, and facts.</td><td>How often are outputs valid and grounded in the source messages?</td></tr></tbody></table></div></div></section>
+<section class="project-section" aria-labelledby="section-title-05" id="section-05"><div class="project-section-label"><div class="project-section-heading"><span class="project-section-number">05</span><h2 id="section-title-05">Delivered scope & validation questions</h2></div></div><div class="project-section-body"><p>The README documents a working backend pipeline for ingestion, noise reduction, vector storage, retrieval, and structured synthesis. It does not report an accuracy benchmark, latency measurements, or a test-pass count.</p><p>Useful follow-up evaluation would measure retrieval relevance, factual grounding, action-item completeness, JSON validity, and performance across different chat-export formats. These remain validation questions, rather than measured project results.</p></div></section>
+<section class="project-section" aria-labelledby="section-title-06" id="section-06"><div class="project-section-label"><div class="project-section-heading"><span class="project-section-number">06</span><h2 id="section-title-06">FAQ</h2></div></div><div class="project-section-body"><div class="project-faq"><details><summary data-number="Q.01">What does ContextAI ingest?<span class="project-faq-symbol" aria-hidden="true"></span></summary><div class="project-faq-answer"><p>Exported WhatsApp .txt conversation files. Custom parsing removes system and metadata noise before embedding.</p></div></details><details><summary data-number="Q.02">What was your contribution?<span class="project-faq-symbol" aria-hidden="true"></span></summary><div class="project-faq-answer"><p>Core backend development: the RAG architecture, preprocessing, vector-storage model, top-five retrieval, and structured response prompting. It was a team hackathon project.</p></div></details><details><summary data-number="Q.03">How is relevant context selected?<span class="project-faq-symbol" aria-hidden="true"></span></summary><div class="project-faq-answer"><p>Cosine-similarity search in PostgreSQL with pgvector retrieves the five most relevant context items for the question.</p></div></details><details><summary data-number="Q.04">Does structured JSON guarantee correct answers?<span class="project-faq-symbol" aria-hidden="true"></span></summary><div class="project-faq-answer"><p>No. It gives the application a predictable output format. Retrieval coverage and factual grounding still need evaluation.</p></div></details></div></div></section>
+        <div class="project-source-note"><span>Project details and measurements from the <a href="https://github.com/Mahaboob-Ashraf/ContextAI/blob/main/README.md" target="_blank" rel="noopener noreferrer">repository README ↗</a>.</span><span>Checked 24 October 2026</span></div>
+        <nav class="project-next-panel" aria-label="Next project"><a class="project-next" href="/work/repopilot" aria-labelledby="next-project-title"><div class="project-next-copy"><span class="project-next-label">UP NEXT · 01 / 06</span><h2 id="next-project-title">RepoPilot</h2><p>A coding repair agent with grounded evidence, isolated tests, and explicit human approvals.</p><span class="project-next-cta">Explore project <span aria-hidden="true">↗</span></span></div><span class="project-next-visual"><img src="/assets/work/repopilot/new-repair.webp" alt="RepoPilot review workbench, ready to start a repair" width="1278" height="1304" loading="lazy" decoding="async" /></span></a></nav>
+      </article>
+      <div class="grid-separator" aria-hidden="true"><span class="grid-node grid-node-left"></span><span class="grid-node grid-node-right"></span></div>
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+          <div class="contact-inner">
+            <div class="contact-ghost-fibers" data-ghost-preset="bokeh" aria-hidden="true"><canvas></canvas></div>
+            <span class="contact-cross contact-cross-one" aria-hidden="true">+</span>
+            <span class="contact-cross contact-cross-two" aria-hidden="true">+</span>
+            <div class="contact-content">
+              <p class="contact-kicker contact-reveal">LET’S CONNECT</p>
+              <h2 id="contact-title" class="contact-title contact-reveal"><span>LET’S TALK ABOUT</span><span><strong>WHAT’S NEXT.</strong></span></h2>
+              <p class="contact-support contact-reveal">I’m open to contracts, internships, and remote engineering roles.</p>
+              <nav class="contact-dock contact-reveal" aria-label="Connect with Mahaboob Ashraf">
+                <a class="contact-network contact-network-github" href="https://github.com/Mahaboob-Ashraf" target="_blank" rel="noopener noreferrer" aria-label="GitHub — Code &amp; contributions (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><span class="contact-brand-mask" style="--contact-logo:url('/assets/tools/github.svg')"></span></span><strong>GitHub</strong><small>Code &amp; contributions</small></a>
+                <a class="contact-network contact-network-linkedin" href="https://www.linkedin.com/in/mohammad-mahaboob-ashraf-a0b17b321/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — Let’s connect (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><img src="/assets/tools/linkedin.svg" width="42" height="42" alt=""/></span><strong>LinkedIn</strong><small>Let’s connect</small></a>
+                <a class="contact-network contact-network-x" href="https://x.com/Mahaboob_Ashraf" target="_blank" rel="noopener noreferrer" aria-label="X — Follow along (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><span class="contact-brand-mask" style="--contact-logo:url('/assets/tools/x.svg')"></span></span><strong>X</strong><small>Follow along</small></a>
+                <a class="contact-network contact-network-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mahaboobashraf12%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email me — Open Gmail (opens in a new tab)"><span class="contact-network-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 6.7 5a2 2 0 0 0 2.6 0L20 7"/></svg></span><strong>Email me</strong><small>Open Gmail</small></a>
+              </nav>
+              <div class="contact-email-block contact-reveal">
+                <p class="contact-email-label">STRAIGHT TO MY INBOX</p>
+                <button class="contact-email-copy" type="button" data-copy-email="mahaboobashraf12@gmail.com" aria-label="Copy email address: mahaboobashraf12@gmail.com" aria-describedby="contact-copy-feedback">
+                  <span class="contact-email-address">mahaboobashraf12@gmail.com</span><span class="contact-copy-action"><span class="contact-copy-icon" aria-hidden="true"><svg class="contact-copy-original" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 5V4H4v12h1"/></svg><svg class="contact-copy-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span data-copy-label>Copy</span></span>
+                </button>
+                <div class="contact-email-footer"><span id="contact-copy-feedback" class="contact-email-feedback" role="status" aria-live="polite"></span><a class="contact-email-app" href="mailto:mahaboobashraf12@gmail.com">Use your email app <span aria-hidden="true">↗</span></a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <div class="grid-separator" aria-hidden="true"><span class="grid-node grid-node-left"></span><span class="grid-node grid-node-right"></span></div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-main">
+            <nav class="footer-navigation" aria-label="Footer navigation">
+              <div class="footer-link-group"><h2>EXPLORE</h2><a href="/work">Projects</a><a href="/#oss">Open source</a><a href="/#about">About</a><a href="/#experience">Experience</a><a href="#contact">Contact</a></div>
+              <div class="footer-link-group"><h2>SOCIAL</h2><a href="https://github.com/Mahaboob-Ashraf" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mohammad-mahaboob-ashraf-a0b17b321/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://x.com/Mahaboob_Ashraf" target="_blank" rel="noopener noreferrer">X</a></div>
+            </nav>
+            <div class="footer-details">
+              <div><span class="footer-label">LOCAL TIME</span><p><time id="footer-local-time">IST</time> <span>· Hyderabad, India</span></p></div>
+              <div><span class="footer-label">EMAIL</span><div class="footer-email"><a href="mailto:mahaboobashraf12@gmail.com">mahaboobashraf12@gmail.com</a><button class="copy-email" type="button" aria-describedby="footer-copy-status" aria-label="Copy email address" data-email="mahaboobashraf12@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="8" y="8" width="11" height="11" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v1"/></svg></button></div><span id="footer-copy-status" class="copy-status" role="status" aria-live="polite"></span></div>
+            </div>
+          </div>
+          <div class="footer-bottom"><small>© <span id="footer-year">2026</span> Mahaboob Ashraf</small><span>Software &amp; AI Engineer · Hyderabad, India</span></div>
+          <div class="footer-watermark" aria-hidden="true"><span class="footer-name">Mahaboob Ashraf</span></div>
+        </div>
+      </footer>
+  </div>
+</body>
+</html>

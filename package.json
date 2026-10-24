@@ -1,0 +1,12 @@
+{
+  "name": "mahaboob-ashraf-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "node server.cjs",
+    "build": "node scripts/build-site.cjs",
+    "check": "node scripts/check-site.cjs",
+    "build:projects": "node scripts/build-project-pages.cjs && node scripts/build-work-page.cjs",
+    "build:contributions": "node scripts/build-contribution-pages.cjs"
+  }
+}

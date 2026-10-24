@@ -1,0 +1,46 @@
+.about-experience{padding-bottom:0;font-family:Bricolage,'DM Sans',sans-serif;scroll-margin-top:96px}
+.research-heading{padding:64px 40px;text-align:center}
+.research-heading>p{margin:0 0 16px;color:#aaa;font-size:12px;font-weight:400;line-height:16px;letter-spacing:1.2px}
+.research-heading h3{margin:0;font-family:Instrument,Georgia,serif;font-size:60px;font-weight:400;letter-spacing:-1.5px;line-height:1}
+.research-heading h3 em{display:inline-block;padding:0 .025em .15em;margin:0 -.025em -.15em;font-weight:400;background:linear-gradient(288deg,#ff8000,#ff00cc 53.2394%,#0044ff);background-size:200% 200%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:hero-colour-sweep 6s ease infinite;animation-delay:-1.3s}
+.research-journey{--journey-axis:calc(30% + 16px);position:relative;border-top:1px solid var(--line-soft)}
+.research-entry{position:relative;isolation:isolate;display:grid;grid-template-columns:30% 32px minmax(0,1fr);column-gap:48px;padding:48px 20px;border-bottom:1px solid var(--line-soft)}
+.research-entry-drug{min-height:840px}.research-entry-ihub{min-height:620px}
+.research-meta{position:relative;z-index:2;min-width:0}
+.research-meta-sticky{position:sticky;top:112px;display:flex;flex-direction:column;gap:32px;padding-right:14px}
+.research-year{margin:0;color:#e4e4e4;font-family:Instrument,Georgia,serif;font-size:36px;font-weight:400;line-height:42px;letter-spacing:-1px}
+.research-year>span{color:#737373}
+.research-period{margin:12px 0 0;color:#929292;font-size:11px;font-weight:400;line-height:17px;letter-spacing:1px;text-transform:uppercase}
+.research-company{display:flex;align-items:center;gap:12px;min-width:0;width:fit-content;color:#c9c9c9}
+.research-company>span:last-child{display:flex;flex-direction:column;gap:6px;min-width:0}
+.research-company strong{font-size:17px;font-weight:500;line-height:22px;letter-spacing:-.25px}
+.research-company strong>span{font-size:11px;color:#777}
+.research-company small{color:#a3a3a3;font-size:12px;font-weight:300;line-height:19px}
+.research-company-mark{display:grid;place-items:center;flex:none;width:48px;height:48px;padding:3px;border:1px solid #2c2c32;border-radius:12px;background:#141416}
+.research-company-mark img{display:block;width:100%;height:100%;object-fit:contain}
+.research-company-ihub{align-items:flex-start;flex-direction:column;gap:12px}
+.research-company-wordmark{width:166px;height:48px;padding:8px;border-color:#dedede;border-radius:7px;background:#fafafa}
+.research-copy{position:relative;z-index:1;min-width:0}
+.research-copy h4{margin:0 0 30px;color:#f0f0f0;font-family:Instrument,Georgia,serif;font-size:44px;font-weight:400;line-height:1;letter-spacing:-.6px}
+.research-bullets{display:flex;flex-direction:column;gap:14px;width:80%;max-width:660px;min-width:0;margin:0;padding:0;list-style:none;color:#a3a3a3;font-size:15px;font-weight:400;line-height:24.375px}
+.research-bullets li{position:relative;padding-left:20px}
+.research-bullets li::before{content:'';position:absolute;left:0;top:10px;width:4px;height:4px;background:#3987f8}
+.research-bullets strong{color:#d5d5d5;font-weight:600}
+.research-stack{margin-top:32px}
+.research-stack>p{margin:0 0 12px;color:#929292;font-size:10px;font-weight:400;line-height:15px;letter-spacing:1px}
+.research-stack ul{display:flex;flex-wrap:wrap;gap:6px;max-width:680px;margin:0;padding:0;list-style:none}
+.research-stack li{display:inline-flex;align-items:center;gap:5px;min-height:25px;padding:3px 8px;border:1px solid #303034;border-radius:5px;background:rgba(255,255,255,.02);color:#a9a9ad;font-size:11px;font-weight:400;line-height:17px}
+.research-stack img{display:block;flex:none;width:12px;height:12px}
+.research-experiments{display:inline-flex;align-items:center;gap:7px;min-height:44px;margin-top:16px;color:#c5c5c5;font-size:13px;font-weight:400;line-height:20px}
+.research-rail{position:absolute;z-index:4;left:var(--journey-axis);top:0;bottom:0;width:6px;transform:translateX(-50%);background:#272729;pointer-events:none}
+.research-rail-fill{position:absolute;left:0;right:0;top:0;height:var(--journey-position,0px);background:linear-gradient(180deg,#2e91ff 0%,#6978ff 52%,#f03ca1 100%);box-shadow:0 0 9px rgba(107,109,255,.08)}
+.research-traveller{position:absolute;left:50%;top:var(--journey-position,0px);display:block;width:36px;height:36px;border:1px solid #6d7e99;border-radius:50%;background:var(--bg);box-shadow:0 0 0 3px var(--bg),0 3px 12px rgba(0,0,0,.4);transform:translate(-50%,-50%);overflow:hidden}
+.research-traveller img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.research-art-clip{position:absolute;z-index:0;top:0;bottom:0;left:0;width:var(--journey-axis);overflow:hidden;pointer-events:none}
+.research-dna-art{position:absolute;display:block;inset:0;width:100%;max-width:none;height:100%;object-fit:cover;object-position:center;opacity:.45}
+/* Move 30% of the image past the journey line, leaving exactly 70% in the left column. */
+.research-drone-art{position:absolute;display:block;right:0;top:240px;width:calc(100% / .7);max-width:none;height:auto;transform:translateX(30%)}
+@media(max-width:1100px){.research-journey{--journey-axis:calc(28% + 12px)}.research-entry{grid-template-columns:28% 24px minmax(0,1fr);column-gap:32px}.research-bullets{width:95%}.research-company strong{font-size:15px}.research-company-mark{width:42px;height:42px}.research-company-wordmark{width:156px;height:45px}.research-copy h4{font-size:40px}}
+@media(max-width:800px){.research-heading{padding:48px 24px}.research-heading h3{font-size:48px;letter-spacing:-1.2px}.research-journey{--journey-axis:24px}.research-entry{grid-template-columns:32px minmax(0,1fr);column-gap:20px;row-gap:28px;padding:36px 20px}.research-meta{grid-column:2}.research-meta-sticky{position:static;gap:22px;padding:0}.research-spacer{display:none}.research-copy{grid-column:2}.research-year{font-size:32px;line-height:36px}.research-period{margin-top:8px}.research-bullets{width:100%;max-width:660px}.research-entry-drug{min-height:0}.research-entry-ihub{min-height:0}.research-art-clip{position:relative;grid-column:2;left:auto;top:auto;bottom:auto;width:100%;height:330px}.research-art-drone{height:clamp(150px,35vw,240px)}.research-drone-art{top:50%;transform:translate(30%,-50%)}.research-rail{width:4px}.research-traveller{width:28px;height:28px}.research-company-ihub{flex-direction:row;align-items:center}.research-company-wordmark{width:130px;height:42px}}
+@media(max-width:520px){.research-heading{padding-inline:16px}.research-heading>p{font-size:11px;letter-spacing:1px}.research-heading h3{font-size:clamp(36px,9vw,46px);letter-spacing:-.7px}.research-entry{padding-right:16px;column-gap:12px}.research-copy h4{font-size:35px;line-height:1.05}.research-bullets{font-size:14px;line-height:24px;gap:16px}.research-company-ihub{flex-direction:column;align-items:flex-start}.research-company strong{font-size:16px}.research-year{font-size:32px}.research-stack li{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.research-heading h3 em{animation:none;background-position:65% 50%}}

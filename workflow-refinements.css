@@ -1,0 +1,37 @@
+/* Four cards: the lower circuit spans the two former delivery/location cards. */
+.workflow-grid{grid-template-rows:288px 350px}
+.workflow-circuit{grid-column:span 8}
+.workflow-circuit .workflow-card-heading{max-width:34%;padding-right:0}
+.workflow-circuit .workflow-card-heading h3{font-size:21px;line-height:1.35}
+.workflow-circuit .workflow-circuit-figure{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);align-items:center;gap:20px;width:100%;height:100%;max-width:none;margin:0;padding:24px 30px 24px 20px;font-family:var(--font-sans);container-type:normal}
+.workflow-circuit .circuit-board{--circuit-tilt-x:24deg;--circuit-tilt-y:0deg;grid-column:2;grid-row:1;min-width:0;height:260px;aspect-ratio:auto;transform:perspective(900px) rotateX(var(--circuit-tilt-x)) rotateY(var(--circuit-tilt-y)) rotateZ(-5deg);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.workflow-circuit .circuit-board::before{content:'';position:absolute;inset:0 -2%;border:1px solid #d8d5c7;border-radius:20px;background:radial-gradient(ellipse at 50% 55%,rgba(253,40,4,.055),transparent 65%),repeating-linear-gradient(0deg,transparent 0 23px,rgba(110,106,89,.05) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(110,106,89,.05) 23px 24px),#f3f2e7;box-shadow:0 4px #d8d7cb,0 8px #c9c8bc,0 22px 28px -12px rgba(48,45,29,.22);transform:translateZ(-8px);pointer-events:none}
+.workflow-circuit .circuit-wiring{transform:translateZ(1px)}
+.workflow-circuit .circuit-component{font-size:12px;line-height:15px;min-height:52px;transform:translateZ(13px);box-shadow:inset 0 1px #fff,0 3px #d1cec2,0 10px 14px -5px rgba(50,45,28,.18)}
+.workflow-circuit .circuit-product{font-size:14px;line-height:17px;min-height:76px;transform:translateZ(24px);box-shadow:inset 0 1px #fff,0 5px #d7baaa,0 16px 18px -5px rgba(75,47,27,.21)}
+.workflow-circuit .circuit-component:is(:hover,:focus-visible),.workflow-circuit .circuit-component.is-active{transform:translateZ(22px);box-shadow:inset 0 1px #fff,0 4px #e5bca9,0 13px 22px -8px rgba(164,65,27,.3)}
+.workflow-circuit .circuit-product:is(:hover,:focus-visible),.workflow-circuit .circuit-product.is-active{transform:translateZ(33px)}
+.workflow-circuit .circuit-caption{grid-column:1;grid-row:1;align-self:end;max-width:230px;min-height:120px;margin:105px 0 0;text-align:left}
+.workflow-circuit .circuit-caption strong{font-size:14px;line-height:1.5}
+.workflow-circuit .circuit-caption p{margin:8px 0 0;font-size:13px;line-height:1.65}
+/* A small navigation capsule, preserving the existing category buttons. */
+.workflow-stack .stack-controls{z-index:3;left:50%;right:auto;bottom:13px;gap:2px;width:max-content;max-width:calc(100% - 24px);margin:0;padding:4px;border:1px solid #d2d2c9;border-radius:999px;background:rgba(255,255,255,.88);box-shadow:inset 0 1px #fff,0 3px 10px rgba(30,30,20,.08);transform:translateX(-50%)}
+.workflow-stack .stack-controls button{justify-content:center;min-height:30px;padding:6px 12px;border-radius:999px;font-size:10px;line-height:16px;letter-spacing:.15px;transition:color .22s,background-color .22s,box-shadow .22s}
+.workflow-stack .stack-controls button::before{display:none}
+.workflow-stack .stack-controls button[aria-pressed=true]{color:#fff;background:#202020;box-shadow:inset 0 1px rgba(255,255,255,.1),0 1px 3px rgba(0,0,0,.15)}
+.workflow-stack .stack-controls button:hover:not([aria-pressed=true]){background:#ecece5;color:#171717}
+.workflow-stack .stack-controls button:focus-visible{outline-offset:2px}
+.workflow-stack .stack-stage{height:139px}
+.about-portrait{position:relative;align-self:center;justify-self:center;width:min(100%,380px);margin:0;padding:12px;border:1px solid #d2d0c3;border-radius:18px;background:#f6f4e9;box-shadow:0 12px 35px -23px rgba(45,38,21,.22);transform:rotate(2deg)}
+.about-portrait-photo{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid #d8d6ca;border-radius:9px;background:#f6f4e9}
+/* 4:5 crop (300,160,720,900) of the 2048px photo keeps both hands and the podium. */
+.about-portrait-photo img{position:absolute;left:-41.667%;top:-17.778%;display:block;width:284.444%;max-width:none;height:auto}
+.about-portrait-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 87%,rgba(246,244,233,.35) 96%,rgba(246,244,233,.85));pointer-events:none}
+.about-portrait figcaption{display:flex;flex-direction:column;gap:4px;padding:15px 8px 6px;color:#26251f;font-family:var(--font-sans)}
+.about-portrait figcaption strong{font-size:17px;font-weight:500}
+.about-portrait figcaption span{color:#686558;font-size:12px}
+@media(max-width:1100px) and (min-width:1001px){.workflow-circuit .workflow-card-heading h3{font-size:19px}.workflow-circuit .workflow-circuit-figure{gap:12px;padding-right:22px}.workflow-circuit .circuit-component{font-size:11px}.workflow-circuit .circuit-product{font-size:12px}}
+@media(max-width:1000px) and (min-width:641px){.workflow-grid{grid-template-rows:none;grid-auto-rows:auto}.workflow-process,.workflow-stack,.workflow-desk{height:288px}.workflow-circuit{grid-column:span 12;height:350px}.workflow-circuit .workflow-card-heading{max-width:32%}.workflow-circuit .workflow-circuit-figure{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}.workflow-stack .stack-controls button{padding-inline:8px;font-size:9px}}
+@media(max-width:640px){.workflow-grid{grid-template-rows:none;grid-auto-rows:auto}.workflow-process,.workflow-stack,.workflow-desk{height:288px}.workflow-circuit{grid-column:1;height:490px}.workflow-circuit .workflow-card-heading{max-width:100%;padding-right:20px}.workflow-circuit .workflow-card-heading h3{font-size:20px}.workflow-circuit .workflow-circuit-figure{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:12px;padding:104px 24px 20px}.workflow-circuit .circuit-board{--circuit-tilt-x:15deg;grid-column:1;height:clamp(185px,60vw,260px);width:min(100%,420px);justify-self:center;transform:perspective(900px) rotateX(var(--circuit-tilt-x)) rotateZ(-3deg)}.workflow-circuit .circuit-caption{grid-column:1;grid-row:2;align-self:auto;max-width:350px;min-height:82px;margin:0;text-align:center}.workflow-circuit .circuit-caption p{margin-inline:auto}.workflow-circuit .circuit-component{min-height:48px;font-size:11px}.workflow-circuit .circuit-product{min-height:70px;font-size:12px}.workflow-stack .stack-controls button{padding-inline:10px;font-size:9px}.about-portrait{width:min(100%,350px);margin-top:24px}}
+@media(max-width:370px){.workflow-stack .stack-controls{gap:0;max-width:calc(100% - 16px);padding:3px}.workflow-stack .stack-controls button{padding-inline:8px;font-size:8px}.workflow-circuit .workflow-circuit-figure{padding-inline:17px}}
+@media(prefers-reduced-motion:reduce){.workflow-circuit .circuit-board{transform:none;transition:none}.workflow-circuit .circuit-component,.workflow-circuit .circuit-product,.workflow-circuit .circuit-component:is(:hover,:focus-visible),.workflow-circuit .circuit-component.is-active{transform:none}.workflow-stack .stack-controls button{transition:none}}
